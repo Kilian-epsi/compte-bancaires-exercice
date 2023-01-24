@@ -30,7 +30,8 @@ class Compte(ABC):
             print('\033[1;31mImpossible de verser un montant négatif! \033')
 
     def afficherSolde(self):  # pragma: no cover
-        return format(round(float(self.solde), 2))
+        result = "{total:.2f}€"
+        return result.format(total=self.solde)
 
     def __repr__(self):
         return ""

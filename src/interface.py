@@ -83,8 +83,8 @@ CHOIX_VERSEMENT_RETRAIT = "Que souhaitez vous faire :\n" \
                           "| 3-             Retour               |\n" \
                           " -------------------------------------\n" \
 
-TAB_REP = [1, 2]
-TAB_REP2 = [1, 2, 3]
+TAB_REP = ['1', '2']
+TAB_REP2 = ['1', '2', '3']
 
 mon_compte_epargne = compte.CompteEpargne('kilian')
 mon_compte_courant = compte.CompteCourant('kilian')
@@ -93,11 +93,11 @@ def lancement():
     print(LOGO)
     print(MESSAGE_ACCUEIL)
     print("Votre choix (1 ou 2):")
-    choix1 = int(input())
+    choix1 = input()
     while choix1 not in TAB_REP:
         choix1 = input("Merci de choisir un compte valide (1 ou 2) : ")
-        choix1 = int(choix1)
-    if choix1 == 1:
+        # choix1 = int(choix1)
+    if int(choix1) == 1:
         affichageCompte(mon_compte_courant, intitule="courant")
     else:
         affichageCompte(mon_compte_epargne, intitule="épargne")
@@ -107,13 +107,13 @@ def affichageCompte(mon_compte, intitule):
     print("Voici le solde de votre compte {} : ".format(intitule))
     print(mon_compte.afficherSolde())
     print(CHOIX_VERSEMENT_RETRAIT)
-    choix2 = int(input())
+    choix2 = input()
     while choix2 not in TAB_REP2:
         choix2 = input("Merci de choisir une action valide (1, 2 ou 3) : ")
-        choix2 = int(choix2)
-    if choix2 == 1:
+        # choix2 = int(choix2)
+    if int(choix2) == 1:
         retraitCompte(mon_compte, intitule)
-    elif choix2 == 2:
+    elif int(choix2) == 2:
         versementCompte(mon_compte, intitule)
     else:
         lancement()
