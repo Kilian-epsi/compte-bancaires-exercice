@@ -1,3 +1,12 @@
+import interface
+# from interface2 import *
+# from tkinter import *
+
 if __name__ == '__main__':
-    print("Let's start coding our bank application !")
-    pass
+    choix = interface.lancement()
+
+    # interface2 avec Tkinter -> ABANDON
+    # pageConnexion()
+
+
+

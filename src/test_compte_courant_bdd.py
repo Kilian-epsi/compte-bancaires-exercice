@@ -26,6 +26,7 @@ def add_to_cc(compte_courant, amount):
 
 @when(parsers.parse("I withdraw {amount:d}€"))
 def remove_from_cc(compte_courant, amount):
+    print(compte_courant)
     compte_courant.retrait(amount)
 
 @then(parsers.parse("CC holds {amount:d}€"))
